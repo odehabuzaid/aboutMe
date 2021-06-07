@@ -1,0 +1,71 @@
+* {font-family: courier;} 
+header{ height: 200px;background-color:white;}
+header nav {float: right;}
+header nav ul li {
+    justify-content: center;
+    display: inline-block;
+    padding: 8px;
+    border-bottom: 2px solid;
+    position: relative;
+    margin-right: 10px;
+    font-family: courier;
+ }
+header img{
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
+    float:left;
+    margin-top:10px;
+}
+/* using pesudo selector for testing and practice */
+ main section:nth-child(1) h1 {
+    font-size:51pt;
+    text-align: center;
+    font-weight:  1000px;
+}
+main section:nth-child(1) h2 {
+    font-size:40pt;
+    text-align: center;
+}
+
+main section:nth-child(2) p  {
+   background-color: #FFAA3B; 
+    line-height: 1.5;
+    font-size:14pt;
+    text-align: center;
+    font-weight:  1000px;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-justify: center;
+
+}
+
+footer { 
+   margin-bottom: 20px; 
+   text-align: center  ;
+   position: fixed;
+   bottom: 0px;
+   width: 100%; 
+   height: 100px;
+}
+
+
+/*
+main section:nth-child(2) p:nth-child(1)
+ {
+     margin-top: 30px;
+    background-color:coral;
+    margin-left:15px;
+    text-indent: 15px;
+}
+p { line-height:  1.5; }
+
+main section:nth-child(2) p:nth-child(2) {
+
+    background-color:burlywood
+}
+
+main section:nth-child(2) p:nth-child(3) {
+
+    background-color: maroon;
+} */
