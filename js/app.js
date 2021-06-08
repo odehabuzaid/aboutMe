@@ -1,83 +1,101 @@
 'use strict';
-// ****** this is a dry solution but as per requirments i have used prompts whithout a loop ******////
-
-// let questions = ['i am from jordan !',
-//   'i like cofee more than tea !',
-//   'i am an organized person',
-//   'do i like reading!',
-//   'do i like basket ball !'
-// ];
-// let correctanswer = [1,1,1,0,0];
-
-// let answer ;
-// for (let i  = 0; i < questions.length ; i++){
-//   do
-//   {
-//     answer = prompt(questions[i]).toLowerCase();
-//   }while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
-//   if ((correctanswer[questions.indexOf(questions[i])] === 1) && (answer ==='y' || answer === 'yes')){
-//     alert('thats right');
-//     /*console.log(`visitor ${visitorName} Answerd if i like basketball or not correctly `); */
-//   }
-// }
-
-
-//as the visitor for his name
+// ask the visitor for his name
 let visitorName = prompt('Hi , Enter your name please') ;
-// greeting message
-alert(`Hello ${visitorName} welcome to my humble page ,
-i will ask you a quick five questions about me. Guess ( y or n / yes or no) !`);
+let totalScore = 0 ;
+//greeting message
+alert(`Hello ${visitorName} welcome to my humble page ,\r\n
+i will ask you a quick questions about me. \r\n Guess ( y or n / yes or no) !`);
+
+// an array of five questions about me!
+const questions = ['i am from jordan !',
+  'i like cofee more than tea !',
+  'i am an organized person',
+  'do i like reading!',
+  'do i like basket ball !'
+];
+
+// to compair if correct or not with the questions
+let correctAnswer = [1,1,1,0,0];
+
+//input validation array
+let responses = ['yes','no','y','n'];
+
+//visitor answer
+let answer ;
+for (const i of questions) {
+  do
+  {
+    //get the user answers for every question in the array ONLY when he answers with  responses = ['yes','no','y','n'];
+    answer = prompt(i.toLowerCase());
+  }while ( responses.indexOf(answer) === -1);
 
 
-//five questions and if answered with correctly with  yes/no | y/n  alert and (log to console in a comment)
-let answer;
-do
-{
-  answer = prompt('i am from jordan !').toLowerCase();
-}while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
-if ( answer === 'yes' || answer === 'y'){
-  alert('thats corret i am from jordan');
-  /*console.log(`visitor ${visitorName} Answerd where i am from correctly `); */
+  // Check the answer wheather its correct or not from the correctanswers array
+  // If correct + 1 to score :) ;
+  if ((correctAnswer[questions.indexOf(i)] ) && (answer ==='y' || answer === 'yes')){
+    alert('thats right');
+    totalScore = totalScore + 1;
+    //console.log(`visitor ${visitorName} Answerd ${i} correctly `);
+  }else if (((correctAnswer[questions.indexOf(i)] ) === 0) && (answer ==='n' || answer === 'no')){
+    alert('thats right');
+    totalScore = totalScore + 1;
+    //console.log(`visitor ${visitorName} Answerd ${i} correctly `);
+  }
 }
 
-do
-{
-  answer = prompt('i like cofee more than tea !').toLowerCase();
-}while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
-if ( answer === 'yes' || answer === 'y'){
-  alert('thats corret i like cofee more than tea');
-  /*console.log(`visitor ${visitorName} Answerd what is my favorite drink correctly `); */
+// HTML
+// order list top 10 intrests in the bottom of the page ;
+// wwork experiance and education summery into an unordered list ;
+// add a 6th question to the guessing game that takes only nummeric input by prompting a user to guess a number ;
+// alert the user 4 times  (if the input is too high or too low for a specified number);
+// score if correctly answered
+// add another question (7) which there is multiple possible answers for it ;
+// allow 6 tries , and exit the quiz when he answers one right .
+// do not use methods and functions for the array seach.
+
+
+// Quizz Question 6 , guessing a number.
+let guess = 30;
+
+//4 tries  ;
+for (let i = 0 ; i < 4 ; i++) {
+  do
+  {
+    //accept the answer only when its a numeric answer , by converting the string to an integer
+    answer = prompt('Guess How old i am ? Enter numbers only');
+    answer = parseInt(answer);
+  }while ( isNaN(answer));
+  if ( answer < guess ){
+    alert(`its less than what you entered ,\r\n you have ${3-i} tries left `);
+  }else if ( answer > guess ){alert(`its more than what you entered ,\r\n you have ${3-i} tries left `);
+  }else if ( answer === guess ){
+    alert('Wow,thats Correct');
+    totalScore = totalScore + 1 ;}
 }
 
-do
-{
-  answer = prompt('i am an organized person').toLowerCase();
-}while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
+// Quizz Question 7 , guessing an intrest.
+const possibleCorrectAnsweres = ['sports','art','music','cars','food','technology'];
+let tries = 0;
+let pingo = false;
+do{
+  //get the user input and search it on the array , if exists the score +1 and pingo , break the for loop , breack the while ;
+  answer = prompt(`Guess one of my intrests ,\r\n 
+  | Hint sports - art - music - cars - food - technology \r\n 
+  you have ${tries} tries of 6  `).toLowerCase();
 
-if ( answer === 'yes' || answer === 'y'){
-  alert('thats corret i am organized person');
-  /*console.log(`visitor ${visitorName} Answerd if i am organized person or not correctly `); */
-}
+  for (let i = 0; i < 6 ; i++) {
+    if (answer === possibleCorrectAnsweres[i]) {
+      totalScore = totalScore + 1 ;
+      pingo= true;
+      break;
+    }
+  }
+  if (pingo) {break;}
+  tries++;
+}while( (tries < 6) );
 
-do
-{
-  answer = prompt('do i like basket ball !').toLowerCase();
-}while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
-if ( answer === 'no' || answer === 'n'){
-  alert('thats right');
-  /*console.log(`visitor ${visitorName} Answerd if i like basketball or not correctly `); */
-}
+//alert final score ,
+alert(`You scored ${totalScore} out of 7` );
 
-do
-{
-  answer = prompt('do i like reading!').toLowerCase();
-}while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
-if ( answer === 'no' || answer === 'n'){
-  alert('thats right, i cant read for more than 15 minuetes without a 15 minutes break :D ');
-  /*console.log(`visitor ${visitorName} Answerd if i like reading or not correctly `); */
-}
-
-//final message
+// quiz end
 alert(`thank you alot for your time ${visitorName} check out my bio`);
-
-
