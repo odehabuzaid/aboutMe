@@ -9,7 +9,9 @@ header nav ul li {
     position: relative;
     margin-right: 10px;
     font-family: courier;
- }
+}
+
+
 header img{
     width: 100%; 
     max-width: 200px; 

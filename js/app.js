@@ -1,4 +1,27 @@
 'use strict';
+// ****** this is a dry solution but as per requirments i have used prompts whithout a loop ******////
+
+// let questions = ['i am from jordan !',
+//   'i like cofee more than tea !',
+//   'i am an organized person',
+//   'do i like reading!',
+//   'do i like basket ball !'
+// ];
+// let correctanswer = [1,1,1,0,0];
+
+// let answer ;
+// for (let i  = 0; i < questions.length ; i++){
+//   do
+//   {
+//     answer = prompt(questions[i]).toLowerCase();
+//   }while ( (answer !== 'yes' ) && (answer !== 'y') && (answer !== 'no') && (answer !== 'n') );
+//   if ((correctanswer[questions.indexOf(questions[i])] === 1) && (answer ==='y' || answer === 'yes')){
+//     alert('thats right');
+//     /*console.log(`visitor ${visitorName} Answerd if i like basketball or not correctly `); */
+//   }
+// }
+
+
 //as the visitor for his name
 let visitorName = prompt('Hi , Enter your name please') ;
 // greeting message
