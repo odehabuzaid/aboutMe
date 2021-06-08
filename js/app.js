@@ -1,4 +1,4 @@
-'use strict';
+'use-strict';
 // ask the visitor for his name
 let visitorName = prompt('Hi , Enter your name please') ;
 let totalScore = 0 ;
