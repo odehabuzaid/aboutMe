@@ -66,8 +66,8 @@ for (let i = 0 ; i < 4 ; i++) {
     answer = parseInt(answer);
   }while ( isNaN(answer));
   if ( answer < guess ){
-    alert(`its less than what you entered ,\r\n you have ${3-i} tries left `);
-  }else if ( answer > guess ){alert(`its more than what you entered ,\r\n you have ${3-i} tries left `);
+    alert(`its more than what you entered ,\r\n you have ${3-i} tries left `);
+  }else if ( answer > guess ){alert(`its less than what you entered ,\r\n you have ${3-i} tries left `);
   }else if ( answer === guess ){
     alert('Wow,thats Correct');
     totalScore = totalScore + 1 ;}
