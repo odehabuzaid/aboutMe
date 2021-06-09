@@ -11,3 +11,14 @@
 # modified 
 
         1- used loops and arrays instead of the previus way.
+
+
+
+        # Pair programming - Lab 04  
+        as a driver : Ahmed Shahrour
+        as a navigator : Odeh Abuzaid 
+
+        # Modifications ::
+                 - added functions to all questions 
+                 - logical code enhancements.
+                 - issues fixed .
