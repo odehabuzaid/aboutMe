@@ -22,3 +22,14 @@
                  - added functions to all questions 
                  - logical code enhancements.
                  - issues fixed .
+
+
+# modified      
+                 - all comments removed.
+                 - Html content modifications.
+                 - css style replaced with a new grid style.
+                 - color and fav logo added.
+   
+        # Tools Used ::
+                 - grid.layoutit.com , to make the css grid.
+                 - adobe ps for the logo and resizing pictures.
