@@ -46,7 +46,7 @@ function guessMyage()
   do
   {
     //accept the answer only when its a numeric answer , by converting the string to an integer
-    answer = prompt('Guess How old i am ? Enter numbers only');
+    answer = prompt('Guess How old i am ? Enter numbers only | Hint : 30');
     answer = parseInt(answer);
   }while ( isNaN(answer));
   return answer;
